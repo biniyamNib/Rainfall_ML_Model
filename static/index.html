@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Rain Prediction Model</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☔ Complete Rain Prediction Model</h1>
+            <p>Enter all weather parameters for accurate rainfall prediction</p>
+        </div>
+
+        <form id="predictionForm">
+            <div class="form-grid">
+                <div class="input-group">
+                    <h3>Temperature Measurements</h3>
+                    <div class="input-field">
+                        <label for="MinTemp">Minimum Temperature (°C)</label>
+                        <input type="number" id="MinTemp" name="MinTemp" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="MaxTemp">Maximum Temperature (°C)</label>
+                        <input type="number" id="MaxTemp" name="MaxTemp" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Temp9am">Temperature at 9am (°C)</label>
+                        <input type="number" id="Temp9am" name="Temp9am" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Temp3pm">Temperature at 3pm (°C)</label>
+                        <input type="number" id="Temp3pm" name="Temp3pm" step="0.1" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3>Wind Measurements</h3>
+                    <div class="input-field">
+                        <label for="WindGustDir">Wind Gust Direction</label>
+                        <select id="WindGustDir" name="WindGustDir" required>
+                            <option value="N">N</option>
+                            <option value="NNE">NNE</option>
+                            <option value="NE">NE</option>
+                            <option value="ENE">ENE</option>
+                            <option value="E">E</option>
+                            <option value="ESE">ESE</option>
+                            <option value="SE">SE</option>
+                            <option value="SSE">SSE</option>
+                            <option value="S">S</option>
+                            <option value="SSW">SSW</option>
+                            <option value="SW">SW</option>
+                            <option value="WSW">WSW</option>
+                            <option value="W">W</option>
+                            <option value="WNW">WNW</option>
+                            <option value="NW">NW</option>
+                            <option value="NNW">NNW</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="WindGustSpeed">Wind Gust Speed (km/h)</label>
+                        <input type="number" id="WindGustSpeed" name="WindGustSpeed" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="WindDir9am">Wind Direction at 9am</label>
+                        <select id="WindDir9am" name="WindDir9am" required>
+                            <option value="N">N</option>
+                            <option value="NNE">NNE</option>
+                            <option value="NE">NE</option>
+                            <option value="ENE">ENE</option>
+                            <option value="E">E</option>
+                            <option value="ESE">ESE</option>
+                            <option value="SE">SE</option>
+                            <option value="SSE">SSE</option>
+                            <option value="S">S</option>
+                            <option value="SSW">SSW</option>
+                            <option value="SW">SW</option>
+                            <option value="WSW">WSW</option>
+                            <option value="W">W</option>
+                            <option value="WNW">WNW</option>
+                            <option value="NW">NW</option>
+                            <option value="NNW">NNW</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="WindDir3pm">Wind Direction at 3pm</label>
+                        <select id="WindDir3pm" name="WindDir3pm" required>
+                            <option value="N">N</option>
+                            <option value="NNE">NNE</option>
+                            <option value="NE">NE</option>
+                            <option value="ENE">ENE</option>
+                            <option value="E">E</option>
+                            <option value="ESE">ESE</option>
+                            <option value="SE">SE</option>
+                            <option value="SSE">SSE</option>
+                            <option value="S">S</option>
+                            <option value="SSW">SSW</option>
+                            <option value="SW">SW</option>
+                            <option value="WSW">WSW</option>
+                            <option value="W">W</option>
+                            <option value="WNW">WNW</option>
+                            <option value="NW">NW</option>
+                            <option value="NNW">NNW</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="WindSpeed9am">Wind Speed at 9am (km/h)</label>
+                        <input type="number" id="WindSpeed9am" name="WindSpeed9am" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="WindSpeed3pm">Wind Speed at 3pm (km/h)</label>
+                        <input type="number" id="WindSpeed3pm" name="WindSpeed3pm" step="0.1" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3>Humidity & Pressure</h3>
+                    <div class="input-field">
+                        <label for="Humidity9am">Humidity at 9am (%)</label>
+                        <input type="number" id="Humidity9am" name="Humidity9am" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Humidity3pm">Humidity at 3pm (%)</label>
+                        <input type="number" id="Humidity3pm" name="Humidity3pm" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Pressure9am">Pressure at 9am (hPa)</label>
+                        <input type="number" id="Pressure9am" name="Pressure9am" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Pressure3pm">Pressure at 3pm (hPa)</label>
+                        <input type="number" id="Pressure3pm" name="Pressure3pm" step="0.1" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3>Cloud Coverage & Rain</h3>
+                    <div class="input-field">
+                        <label for="Cloud9am">Cloud Coverage at 9am (oktas)</label>
+                        <input type="number" id="Cloud9am" name="Cloud9am" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Cloud3pm">Cloud Coverage at 3pm (oktas)</label>
+                        <input type="number" id="Cloud3pm" name="Cloud3pm" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Rainfall">Rainfall (mm)</label>
+                        <input type="number" id="Rainfall" name="Rainfall" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="RainToday">Rain Today</label>
+                        <select id="RainToday" name="RainToday" required>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <h3>Other Measurements</h3>
+                    <div class="input-field">
+                        <label for="Evaporation">Evaporation (mm)</label>
+                        <input type="number" id="Evaporation" name="Evaporation" step="0.1" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="Sunshine">Sunshine (hours)</label>
+                        <input type="number" id="Sunshine" name="Sunshine" step="0.1" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Predict Rainfall</button>
+        </form>
+
+        <div class="loading" id="loading">
+            Analyzing weather data... Please wait...
+        </div>
+
+        <div id="result">
+            <h3>Prediction Results</h3>
+            <div class="result-content">
+                <div class="result-box">
+                    <h4>Will it rain tomorrow?</h4>
+                    <p id="predictionResult">-</p>
+                </div>
+                <div class="result-box">
+                    <h4>Probability of Rain</h4>
+                    <p id="probabilityResult">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
