@@ -1,6 +1,6 @@
-# Import necessary libraries
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware 
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import pandas as pd
 import joblib
@@ -44,6 +44,9 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
+
+# Serve static files
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Simulate an asynchronous data fetch operation
 async def fetch_data():
